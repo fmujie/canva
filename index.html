@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="myCanvas" style="border: 1px solid #aaa; display: block; margin: 0 auto;"></canvas>
+    <script>
+        window.onload = function() {
+            var myCanvas = document.getElementById("myCanvas");
+            myCanvas.width = 1024;
+            myCanvas.height = 768;
+            var context = myCanvas.getContext("2d");//2D效果
+
+            // if(canvas.getContext("2d")){
+
+            // }else{
+            //     alert('当前浏览器不支持');
+            // }
+
+            context.beginPath();//分隔
+            context.moveTo(100,100);
+            context.lineTo(700,700);
+            context.lineTo(100,700);
+            context.lineTo(100,100);
+            context.closePath();//分隔
+
+            // context.fillStyle = "rgb(2,100,30)"
+            // context.fill();   ////填充颜色
+            context.lineWidth = 5;
+            context.strokeStyle = "#005588";
+            context.stroke();
+
+            context.beginPath();
+            context.moveTo(200,100);
+            context.lineTo(700,600);
+            context.closePath();
+
+            context.strokeStyle = "red";//颜色覆盖（及于状态）解决方法beginPath() closePath()
+            context.stroke();
+        }
+    </script>
+</body>
+</html>
